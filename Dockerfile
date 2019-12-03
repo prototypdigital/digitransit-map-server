@@ -2,7 +2,7 @@ FROM node:6-stretch
 LABEL Prototyp version: 0.1
 
 ENV FONTSTACK_PASSWORD ""
-ENV CROATIA_OTP_URL http://api.cityrouting.e-gpp.hr/routing/v1/routers/hsl/index/graphql
+ENV CROATIA_OTP_URL https://api.cityrouting.e-gpp.hr/routing/v1/routers/croatia/index/graphql
 ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
