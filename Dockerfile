@@ -18,6 +18,7 @@ RUN yarn install
 
 COPY . ${WORK}
 
+# Download from our digitalocean account manually, to avoid burning bandwidth
 RUN curl ./croatia.mbtiles > croatia.mbtiles
 EXPOSE 8080
 
