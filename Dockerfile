@@ -18,8 +18,8 @@ RUN yarn install
 
 COPY . ${WORK}
 
-# Download from our digitalocean account manually, to avoid burning bandwidth
-RUN curl ./croatia.mbtiles > croatia.mbtiles
+# Download mbtiles manually to avoid burning bandwidth
+# RUN curl https://digitransit.sfo2.digitaloceanspaces.com/croatia.mbtiles > croatia.mbtiles
 EXPOSE 8080
 
 RUN chmod -R 777 ${WORK}
