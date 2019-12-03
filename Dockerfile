@@ -1,10 +1,8 @@
 FROM node:6-stretch
-MAINTAINER Reittiopas version: 0.1
+LABEL Prototyp version: 0.1
 
 ENV FONTSTACK_PASSWORD ""
-ENV HSL_OTP_URL api.digitransit.fi/routing/v1/routers/hsl/index/graphql
-ENV FINLAND_OTP_URL api.digitransit.fi/routing/v1/routers/finland/index/graphql
-ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
+ENV CROATIA_OTP_URL http://api.cityrouting.e-gpp.hr/routing/v1/routers/hsl/index/graphql
 ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
@@ -20,7 +18,7 @@ RUN yarn install
 
 COPY . ${WORK}
 
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland.mbtiles
+RUN curl https://digitransit.sfo2.digitaloceanspaces.com/croatia.mbtiles > croatia.mbtiles
 EXPOSE 8080
 
 RUN chmod -R 777 ${WORK}
