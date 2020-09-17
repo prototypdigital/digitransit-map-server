@@ -1,7 +1,7 @@
 FROM node:6-stretch
 LABEL Prototyp version: 0.1
 
-ENV CROATIA_OTP_URL api.cityrouting.e-gpp.hr/routing/v1/routers/croatia/index/graphql
+ENV CROATIA_OTP_URL digitransit-otp:8080/otp/routers/croatia/index/graphql
 ENV WORK=/opt/hsl-map-server
 
 RUN mkdir -p ${WORK}
